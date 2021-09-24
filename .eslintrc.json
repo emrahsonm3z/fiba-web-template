@@ -21,7 +21,10 @@
     "testing-library"
   ],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
     "prettier/prettier": [
       "error",
       { "endOfLine": "auto" },

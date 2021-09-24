@@ -1,6 +1,6 @@
-import React from 'react'
-import { shallow } from 'enzyme'
 import App from 'App'
+import { shallow } from 'enzyme'
+import React from 'react'
 
 describe('rendering app', () => {
   it('render app component without crashing', () => {

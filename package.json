@@ -22,10 +22,32 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "yarn run test --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts,.tsx,.js",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write ./**/*.{js,,ts,tsx}"
+    "format": "prettier --write ./**/*.{js,ts,tsx}",
+    "svgr": "svgr src/icons -d src/components/icons --icon --svg-props className= --replace-attr-values \"#fff=currentColor\" --replace-attr-values \"#000=currentColor\" --svgo-config .svgorc.json && eslint src/components/icons --fix"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/index.tsx",
+      "!src/setupTests.ts",
+      "!src/components/**/index.{ts,tsx}",
+      "!src/components/**/*.stories.{ts,tsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -46,9 +68,11 @@
     ]
   },
   "devDependencies": {
+    "@svgr/cli": "^5.5.0",
     "@types/enzyme": "^3.10.9",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
+    "enzyme-to-json": "^3.6.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -58,6 +82,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-testing-library": "^4.12.4",
     "prettier": "^2.4.1"
   }
 }

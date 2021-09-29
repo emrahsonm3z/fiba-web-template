@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Hello, Enzyme! renders snapshots, too 1`] = `
+<button
+  type="button"
+>
+  Click
+</button>
+`;
+
 exports[`runs correctly 1`] = `
 <button
   type="button"

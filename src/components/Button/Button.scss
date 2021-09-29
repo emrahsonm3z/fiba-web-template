@@ -1,0 +1,15 @@
+button {
+  background-color: #f37852;
+
+  span {
+    color: #cecece;
+  }
+}
+
+.outline {
+  border-radius: 2px;
+  box-shadow: none;
+  box-sizing: border-box;
+  outline: 2px solid rgb(153, 50, 204);
+  outline-offset: 2px;
+}

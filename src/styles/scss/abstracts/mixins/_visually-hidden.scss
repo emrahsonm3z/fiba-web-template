@@ -1,0 +1,20 @@
+//
+// Visual Hidden
+//
+// Hides content visually, but it will remain available to assistive technologies
+//
+// See: https://a11yproject.com/posts/how-to-hide-content/
+// See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
+//
+
+@mixin visually-hidden() {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: px-to-rem(-1px);
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

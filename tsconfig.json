@@ -12,9 +12,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "baseUrl": "src"
-  }
+  },
+  "include": ["src/**/*", "**/*.test.tsx", "**/*.spec.tsx"]
 }

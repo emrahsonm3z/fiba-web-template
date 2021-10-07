@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start:dev": "env-cmd -f .env.development react-scripts start",
+    "start:prod": "env-cmd -f .env.production react-scripts start",
+    "build:dev": "env-cmd -f .env.development npm run build:tsc",
+    "build:prod": "env-cmd -f .env.production npm run build:tsc",
     "build:tsc": "npm run clean && npm run compile",
     "clean": "rimraf -rf ./dist",
     "compile": "tsc -p tsconfig.build.json",
@@ -17,7 +19,7 @@
     "lint:css": "stylelint --syntax scss \"src/styles/**/*.scss\"",
     "format": "prettier --write ./**/*.{js,ts,tsx} && stylelint --fix --syntax scss \"src/styles/**/*.scss\"",
     "svgr": "svgr src/icons -d src/components/icons --icon --svg-props className= --replace-attr-values \"#fff=currentColor\" --replace-attr-values \"#000=currentColor\" --svgo-config .svgorc.json && eslint src/components/icons --fix",
-    "css:compile": "node-sass src/styles/scss/main.scss dist/main.css --output-style compressed --source-map dist"
+    "build:css": "node-sass src/styles/scss/main.scss dist/main.css --output-style compressed --source-map dist"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -28,6 +30,8 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "cross-env": "^7.0.3",
+    "env-cmd": "^10.1.0",
     "enzyme": "^3.11.0",
     "node-sass": "5.0.0",
     "react": "^17.0.2",

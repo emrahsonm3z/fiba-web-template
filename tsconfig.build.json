@@ -4,13 +4,20 @@
     "target": "ES5",
     "sourceMap": true,
     "declaration": true,
-    "declarationMap": true,
     "noEmitOnError": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "jsx": "react",
+    "strict": true,
+    "jsx": "react-jsx",
+    "baseUrl": "src",
     "outDir": "./dist"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "coverage"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "**/*.test.tsx",
+    "**/*.spec.tsx"
+  ]
 }

@@ -2,8 +2,12 @@ import './Button.scss'
 
 import React from 'react'
 
-const Button: React.FC = () => (
-  <button className="outline" type="button">
+interface IButtonProps {
+  label: string
+}
+
+const Button: React.FC<IButtonProps> = (props: IButtonProps) => (
+  <button className="outline" type="button" {...props}>
     <span>Click</span>
   </button>
 )

@@ -4,7 +4,7 @@ import React from 'react'
 function App() {
   return (
     <div className="App">
-      <Button a />
+      <Button label="12" />
       <hr />
       <h4>API_URL:</h4>
       {process.env.REACT_APP_API_URL}

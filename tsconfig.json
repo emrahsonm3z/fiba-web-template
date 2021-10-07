@@ -1,8 +1,11 @@
 {
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
+    "target": "ES5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,9 +15,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "jsx": "react-jsx",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "baseUrl": "src"
   },
-  "include": ["src/**/*", "**/*.test.tsx", "**/*.spec.tsx"]
+  "include": ["src/**/*", "**/*.test.tsx", "**/*.spec.tsx"],
+  "exclude": ["node_modules"]
 }
